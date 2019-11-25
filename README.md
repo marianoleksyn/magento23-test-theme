@@ -1,0 +1,4 @@
+- Theme developed for version Magento-CE-2.3.3-2019-09-26-03-30-45
+- `CustomTheme` - app/design/frontend/Marian/CustomTheme
+- Sticky navigation on desktop - add Sticky Plugin
+- Product header panel

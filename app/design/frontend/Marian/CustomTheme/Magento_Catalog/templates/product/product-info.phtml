@@ -1,0 +1,8 @@
+<?php
+$productImage = $block->getImage($block->getProduct(), 'category_page_grid');
+?>
+
+<?= $productImage->toHtml(); ?>
+<div class="header-product-title">
+    <?= $block->getLayout()->getBlock('page.main.title')->getPageTitle() ?>
+</div>

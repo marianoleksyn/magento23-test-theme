@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <container name="header.product" htmlTag="div" htmlClass="header-product" before="-">
+                <container name="header.product.container" htmlTag="div" htmlClass="container">
+                    <container name="header.product.left" htmlTag="div" htmlClass="header-product-left" before="-">
+                        <block class="Magento\Catalog\Block\Product\View" name="header.product.title.image"
+                               template="Magento_Catalog::product/product-info.phtml"/>
+                    </container>
+                    <container name="header.product.right" htmlTag="div" htmlClass="header-product-right"
+                               after="header.product.left">
+                        <container name="header.product.price.wrapper" before="-">
+                            <block class="Magento\Catalog\Pricing\Render" name="header.product.price.final">
+                                <arguments>
+                                    <argument name="price_render" xsi:type="string">product.price.render.default
+                                    </argument>
+                                    <argument name="price_type_code" xsi:type="string">final_price</argument>
+                                    <argument name="zone" xsi:type="string">item_view</argument>
+                                </arguments>
+                            </block>
+                        </container>
+                        <block class="Magento\Catalog\Block\Product\View" name="header.product.info"
+                               template="Magento_Catalog::product/view/form.phtml" after="alert.urls">
+                            <container name="header.product.info.form.content" as="product_info_form_content">
+                                <block class="Magento\Catalog\Block\Product\View" name="header.product.info.addtocart"
+                                       as="addtocart" template="Magento_Catalog::product/view/addtocart.phtml"/>
+                            </container>
+                        </block>
+                        <container name="header.product.banner" htmlTag="div" htmlClass="header-product-banner">
+                            <block class="Magento\Cms\Block\Block" name="Sale banner">
+                                <arguments>
+                                    <argument name="block_id" xsi:type="string">sale_banner</argument>
+                                </arguments>
+                            </block>
+                        </container>
+                    </container>
+                </container>
+            </container>
+        </referenceContainer>
+    </body>
+</page>
